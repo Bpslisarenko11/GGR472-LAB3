@@ -3,35 +3,85 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GGR472 Lab 3</title>
-    <!-- mapbox API -->
+
+    <!-- API links for mapbox -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css' rel='stylesheet' />
-    <!-- mapbox geocoder plugin -->
-    <script
-        src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.2/mapbox-gl-geocoder.min.js"></script>
-    <link rel="stylesheet"
-        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.2/mapbox-gl-geocoder.css"
-        type="text/css">
-    <!-- Bootstrap -->
+
+    <!-- link for mapbox geocoder plugin -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.2/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.2/mapbox-gl-geocoder.css" type="text/css">
+
+    <!-- links for Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- CSS -->
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- MAP CONTAINER -->
+    <!-- Container for the map -->
     <div id='my-map' class='map-container'></div>
 
-    <!-- NAVIGATION ELEMENTS -->
+    <!-- container for the geocoder -->
      <div class='map-search-container'>
-        <label>Search for location</label>
+        <label>Search GTA Location</label>
         <div id="geocoder" class="geocoder"></div>
     </div>
 
+    
+
+    <!-- legend elements -->
+    <div id="Area Legend" class='legend'>
+        <h4>Area of Parks (m<sup>2</sup>)</h4>
+        <div><span style='background-color: #6b89ff'></span>0-7500</div>
+        <div><span style='background-color: #0033ff'></span>7500-20000</div>
+        <div><span style='background-color: #001c8a'></span>20000-50000</div>
+        <div><span style='background-color: #8b00d6'></span>50000-85000</div>
+        <div><span style='background-color: #d10000'></span>>85000</div>
+    </div>
+
+    <!-- Container for the zoom to parks features, filter features, and button-->
+    <div class="park-zoom-filter"> 
+        <form>
+            <fieldset id="parkdata">
+                <label>Zoom to Park</label>
+                <select id="parks1" name="parks1">
+                    <!-- Values and names of the  zoom to park dropdown options-->
+                    <option value="" disabled selected>Choose Park</option>
+                    <option value="High Park">High Park</option>
+                    <option value="Tommy Thompson Park">Tommy Thompson Park</option>
+                    <option value="Trinity Bellwoods Park">Trinity Bellwoods Park</option>
+                    <option value="Greenwood Park">Greenwood Park</option>
+                    <option value="none">Reset</option>
+                </select>
+            </fieldset>
+        </form>
+         ______________________
+  
+        <form>
+            <fieldset id="filter-area">
+                <label>Filter Parks</label>
+                <select id="area-park" name="area-park">
+                    <!-- Values and names of the filter parks dropdown options-->
+                    <option value="" disabled selected>Choose Filter</option>
+                    <option value="0-7500">0-7500 m2</option>
+                    <option value="7500-20000">7500-20000 m2</option>
+                    <option value="20000-50000">20000-50000 m2</option>
+                    <option value="50000-85000">50000-85000 m2</option>
+                    <option value="85000+">>85000 m2</option>
+                    <option value="remove">All Parks</option>
+                </select>
+            </fieldset>
+        </form>
+        
+        <!-- small button for resetting map zoom-->
+        <div type="button" class="btn btn-primary btn-sm" id="reset-button">reset zoom</div>
+    
+
+    </div>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

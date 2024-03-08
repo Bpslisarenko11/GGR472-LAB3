@@ -7,16 +7,64 @@
 
 .map-search-container {
     position: absolute;
-    font: 14px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    background: rgba(255, 255, 255, 0.8);
+    font: 16px/22px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background: whitesmoke;
+    width: 250px;
     top: 0;
-    left: 0;
-    margin: 10px 0 0 10px; /*top margin, right margin, bottom margin, left margin*/
-    padding: 10px; /*around elements inside of overlay*/
-    overflow: visible;
+    right: 5px;
+    margin: 5px 0 0 5px; /* spacing of all margin sides of the container */
+    padding: 10px; /*Add additional spacing around the container*/
 }
 
+/* Positioning of the geocoder inside the map-search-container */
 #geocoder {
     position: relative;
-    margin: 10px 0 10px;
+    width: 10px;
+    top: 0;
+    right: 5px;
+    margin: 5px 0 5px;
+}
+
+.legend {
+    position: absolute;
+    background-color: whitesmoke;
+    border-radius: 3px;
+    bottom: 0;
+    margin-bottom: 35px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding: 15px;
+    right: 5px;
+}
+
+.legend div span {
+    display: inline-block;
+    border-radius: 75%; /*round the edges of the legend points to make them circles*/
+    height: 12px; /*height of legend circles*/
+    width: 12px; /* Width of legend circles*/
+    margin-right: 8px; /*spacing of the circles in the legend*/
+}
+
+/* positioning and spacing of the park-zoom-filter */
+.park-zoom-filter {
+    position: relative;
+    font: 16px/22px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background: whitesmoke;
+    width: 225px;
+    top: 110px;
+    left: 1050px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+/* positioning of the reset-button within the park-zoom-filter*/
+#reset-button  {
+    position: relative;
+    width: 100px;
+    top: 0;
+    left: 50px;
+    margin: 5px 0 5px;
+}
+
+form {
+    padding-bottom: 22px;
 }

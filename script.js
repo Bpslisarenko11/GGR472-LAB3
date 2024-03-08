@@ -32,7 +32,7 @@ map.on('load',() => {
     // Add Geojson source file
     map.addSource("parks-areas", {
         type: "geojson",
-        data: 'https://raw.githubusercontent.com/Bpslisarenko11/GGR472-LAB3/main/park_area.geojson', // Link to GeoJSON link in GitHub
+        data: 'https://bpslisarenko11.github.io/GGR472-LAB3/park_area.geojson', // Link to GeoJSON link in GitHub
     
     });
     //Add the GeoJSON link source as a new layer
